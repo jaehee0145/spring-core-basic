@@ -121,7 +121,18 @@
   - AS IS : 구체화 클래스를 변경하려면 클라이언트 코드를 변경해야 함
   - TO BE : AppConfig만 변경하면 클라이언트 코드 변경 없이 확장 가능
 
-
+### 스프링으로 전환하기 
+- AppConfig를 스프링 기반으로 변경
+  - `AppConfig`에 설정을 구성한다는 뜻의 `@Configuration`을 붙여준다.
+  - 각 메서드에 `@Bean`을 붙이면 스프링 컨테이너에 스프링 빈으로 등록된다.
+- 스프링 컨테이너
+  - ApplicationContext를 스프링 컨테이너라고 한다.
+  - AS IS : 개발자가 AppConfig를 사용해서 직접 객체를 생성하고 주입
+  - TO BE 
+    - 스프링 컨테이너가 @Configuration이 붙은 AppConfig를 구성 정보로 사용한다.
+    - 여기서 @Bean이라 적힌 메서드를 모두 호출해서 반환된 객체를 스프링 컨테이너에 스프링 빈으로 등록한다.
+    - 스프링 빈은 @Bean이 붙은 메서드 명을 스프링 빈의 이름으로 사용한다.
+    - applicationContext.getBean()을 사용해서 스프링 빈을 사용할 수 있다.
 
 
 
