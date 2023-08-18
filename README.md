@@ -158,8 +158,25 @@
 - 부모 타입으로 조회하면 자식 타입도 함께 조회된다.
   - 최상위 객체인 Object 타입으로 조회하면 모든 스프링 빈이 조회된다.
 
-
 ### BeanFactory와 ApplicationContext
+- BeanFactory
+  - 스프링 컨테이너의 최상위 인터페이스
+  - 스프링 빈을 관리하고 조회하는 역할
+
+- ApplicationContext
+  - BeanFactory 기능을 모두 상속 받아서 제공한다
+
+- ApplicationContext가 추가로 제공하는 부가기능
+  - MessageSource : 국제화
+  - EnvironmentCapable : 환경변수
+  - ApplicationEventPublisher : 이벤트
+  - ResourceLoader : 파일, 클래스패스 등 리소스 
+
+- ApplicationContext는 BeanFactory의 모든 기능을 상속받는다.
+- 추가로 제공하는 부가기능이 있다.
+- BeanFactory를 직접 사용할 일은 거의 없다. 
+- ApplicationContext, BeanFactory를 스프링 컨테이너라고 한다. 
+
 ### 다양한 설정 형식 지원 - 자바코드, XML
 ### 스프링 빈 설정 메타 정보 - BeanDefinition
 
