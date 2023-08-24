@@ -227,10 +227,23 @@
   - @Component 애노테이션이 붙은 클래스를 빈으로 등록한다.
   - @Autowired 생성자에 붙이면 자동으로 의존관계 주입 
 
-
 ### 탐색 위치와 기본 스캔 대상
+- 설정 정보 클래스를 프로젝트 최상단에 두는 것이 좋다. 
+- @SpringBootApplication 에 @ComponentScan이 포함되어 있음
+- @Component이 포함된 어노테이션
+  - @Controller, @Service, @Repository, @Configuration 
+
+> 애노테이션에는 상속관계라는 개념이 없다. 특정 애노테이션이 포함되어 있다는 것은 스프링이 지원하는 기능
+
 ### 필터
+- @ComponentScan 옵션 
+  - includeFilters, excludeFilters
+
 ### 중복 등록과 충돌 
+- 스프링 부트에서는 수동 빈 vs 자동 빈 충돌하는 경우에 오류가 발생하도록 기본 값이 설정되어 있음
+  - spring.main.allow-bean-definition-overriding=true
+
+
 
 
 
