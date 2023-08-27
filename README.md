@@ -379,6 +379,10 @@
 ### request 스코프 예제
 ### 스코프와 Provider
 ### 스코프와 프록시 
+- `@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)`
+- 프록시 객체 덕분에 싱글톤 빈을 사용하듯이 편리하게 request scope를 사용할 수 있다.
+- Provider를 사용하든, 프록시를 사용하든 핵심 아이디어는 진짜 객체 조회를 꼭 필요한 시점까지 지연처리 한다는 점
+  - 단지 애노테이션 설정만으로 원본 객체 대신 프록시를 사용할 수 있다. 이것이 다형성과 DI 컨테이너가 가진 큰 장점 
 
 
 
